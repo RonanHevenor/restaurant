@@ -366,8 +366,8 @@ a:active {
     padding-bottom: 5%;
     margin: 0 !important;
     display: inline;
-    text-shadow: 0px 5px 7px rgba(0, 0, 0, 0.4);
     z-index: 0;
+    text-shadow: 0px 5px 5px rgb(0, 0, 0);
 }
 
 .hero {
@@ -421,7 +421,7 @@ a:active {
 }
 
 .placeholder-logo-icon {
-    width: 66.1px;
+    width: 100%;
     position: relative;
     max-height: 100%;
 }
@@ -429,8 +429,9 @@ a:active {
 .logo {
     position: absolute;
     top: 2px;
-    left: 28px;
-    width: 86.1px;
+    left: 0;
+    height: 100%;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
