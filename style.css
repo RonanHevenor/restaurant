@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fffaf0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+
+h1 {
+  color: #b58900;
+  margin-bottom: 10px;
+}
+
+/* Use a tight grid layout */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+  gap: 2px;
+}
+
+.hexagon {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hexagon:hover {
+  transform: scale(1.5);
+}
+
+.hexagon .label {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  font-size: 0.5rem;
+  padding: 1px 3px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hexagon:hover .label {
+  opacity: 1;
+}
