@@ -1,3 +1,137 @@
+.index-child {
+    position: absolute;
+    width: 100%;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.25);
+    background-color: #292823;
+    height: 400px;
+}
+
+.body002 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 24px;
+    display: inline-block;
+    width: 295px;
+}
+
+.clock-icon {
+    position: absolute;
+    height: 14.39%;
+    width: 6.12%;
+    top: 1.44%;
+    right: 93.88%;
+    bottom: 84.17%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.monday {
+    margin: 0;
+}
+
+.days {
+    position: absolute;
+    top: 34px;
+    left: 54px;
+    display: inline-block;
+    width: 100px;
+    height: 105px;
+}
+
+.times {
+    position: absolute;
+    top: 34px;
+    left: 213px;
+    display: inline-block;
+    width: 100px;
+    height: 105px;
+}
+
+.hours {
+    position: absolute;
+    top: 3519px;
+    right: 985px;
+    width: 327px;
+    height: 139px;
+    font-size: 13px;
+}
+
+.body0021 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: inline-block;
+    width: 295px;
+}
+
+.phone-icon {
+    position: absolute;
+    height: 20.69%;
+    width: 5.52%;
+    top: 3.45%;
+    right: 94.48%;
+    bottom: 75.86%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.green-street-hometown-container {
+    position: absolute;
+    top: 34px;
+    left: 53px;
+    font-size: 13px;
+    display: inline-block;
+    width: 209px;
+    height: 53px;
+}
+
+.contact {
+    position: absolute;
+    top: 3519px;
+    right: 557px;
+    width: 326px;
+    height: 87px;
+}
+
+.facebook-dandelion-cafe {
+    color: inherit;
+}
+
+.stay-connected-and-container {
+    position: absolute;
+    top: 34px;
+    left: 53px;
+    font-size: 13px;
+    display: inline-block;
+    width: 273px;
+    height: 53px;
+}
+
+.contact1 {
+    position: absolute;
+    top: 3511px;
+    right: 129px;
+    width: 326px;
+    height: 87px;
+}
+
+.header002 {
+    position: absolute;
+    top: 3435px;
+    right: 891px;
+    font-size: 64px;
+    display: inline-block;
+    width: 446px;
+}
+
 .garden001-icon {
     width: 750px;
     position: relative;
@@ -5,16 +139,12 @@
     object-fit: cover;
 }
 
-.header002 {
+.header0021 {
     position: absolute;
     top: 0px;
     right: 0px;
     display: inline-block;
     width: 446px;
-}
-
-.at-dandelion-cafe {
-    margin: 0;
 }
 
 .body001-txt {
@@ -51,6 +181,8 @@
     align-items: center;
     justify-content: flex-start;
     gap: 45px;
+    font-size: 64px;
+    color: #292823;
 }
 
 .slogan {
@@ -58,15 +190,35 @@
     top: 2105px;
     left: 274px;
     font-size: 96px;
+    color: #292823;
     text-align: center;
 }
 
-.home-photos-icon {
+.food-2-icon {
+    position: absolute;
+    top: 1510px;
+    left: 103px;
+    width: 450px;
+    height: 413px;
+    object-fit: cover;
+}
+
+.food-1-icon {
+    position: absolute;
+    top: 1183px;
+    left: 575px;
+    width: 762px;
+    height: 740px;
+    object-fit: cover;
+}
+
+.cafe-view-icon {
     position: absolute;
     top: 1183px;
     left: 103px;
-    width: 1234px;
-    height: 740px;
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
 }
 
 .hero-text {
@@ -92,7 +244,6 @@
     background-position: top;
     text-align: center;
     font-size: 128px;
-    color: #f6f0f0;
 }
 
 .header2 {
@@ -160,6 +311,7 @@
     left: -10px;
     height: 120px;
     font-size: 35px;
+    color: #292823;
 }
 
 .index {
@@ -169,7 +321,7 @@
     height: 3768px;
     overflow: hidden;
     text-align: left;
-    font-size: 64px;
-    color: #292823;
+    font-size: 24px;
+    color: #f6f0f0;
     font-family: Kameron;
 }
