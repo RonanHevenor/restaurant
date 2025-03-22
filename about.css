@@ -1,11 +1,17 @@
-/* Reset default margins and paddings to remove any unintended spacing */
+/* Reset default margins, paddings, and box-sizing for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Remove default link styling (blue underline) and inherit parent styles */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default link styling and let links inherit parent styles */
 a,
 a:visited,
 a:hover,
@@ -14,11 +20,16 @@ a:active {
     text-decoration: none;
 }
 
-/* Original CSS code from your snippet */
+/* -------------------------------------------------- */
+/* Merged Styles from index.css and about.css         */
+/* -------------------------------------------------- */
+
+/* .frame-child: Removed box-shadow and border to avoid unwanted borders */
 .frame-child {
     align-self: stretch;
     position: relative;
-    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: none;
+    border: none;
     background-color: #292823;
     height: 400px;
 }
@@ -213,193 +224,209 @@ a:active {
 .footer {
     position: absolute;
     width: calc(100% + 20px);
-    top: 3136px;
-    right: -20px;
-    left: 0px;
+    top: 3930px;
+    right: 0px;
+    left: -20px;
     height: 420px;
-    color: #f6f0f0;
-}
-
-.garden001-icon {
-    width: 750px;
-    position: relative;
-    height: 740px;
-    object-fit: cover;
+    font-size: 24px;
 }
 
 .header0021 {
-    align-self: stretch;
-    position: relative;
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 519.5px);
+    display: inline-block;
+    width: 1039px;
+}
+
+.body001-txt {
+    width: 100%;
 }
 
 .body001 {
-    align-self: stretch;
-    position: relative;
+    position: absolute;
+    top: 82px;
+    left: calc(50% - 519.5px);
     font-size: 24px;
     display: flex;
     align-items: center;
-    height: 392px;
-    flex-shrink: 0;
+    width: 1039px;
+    height: 336px;
 }
 
-.about-text {
-    width: 446px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 20px;
+.our-solution {
+    width: 1039px;
+    position: relative;
+    height: 418px;
 }
 
-.about {
+.our-solution-wrapper {
     position: absolute;
-    top: 2294.2px;
-    left: calc(50% - 621px);
-    width: 1241px;
-    overflow: hidden;
+    width: 100%;
+    top: 2986px;
+    right: 0px;
+    left: 0px;
+    height: 960px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    gap: 45px;
-    font-size: 64px;
+    justify-content: center;
+    padding: 267px 200px;
+    box-sizing: border-box;
+    background-image: url('Frame 6.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
 }
 
-.sourced-from-home {
-    margin: 0;
-    font-size: 64px;
-}
-
-.slogan {
+.header0022 {
     position: absolute;
-    width: 100%;
-    top: 1864px;
-    right: 0%;
-    left: 0%;
-    background-color: #fada7a;
-    height: 318px;
+    top: 0px;
+    right: 621px;
+    display: inline-block;
+    width: 467px;
+}
+
+.body0011 {
+    position: absolute;
+    top: 158px;
+    right: 621px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    width: 467px;
+    height: 392px;
+}
+
+.ship-icon {
+    position: absolute;
+    top: 0px;
+    left: 556px;
+    width: 532px;
+    height: 550px;
+    object-fit: cover;
+}
+
+.enviorment {
+    width: 1088px;
+    position: relative;
+    height: 550px;
+}
+
+.header0023 {
+    position: absolute;
+    top: 0px;
+    right: -0.01px;
+    display: inline-block;
+    width: 462.1px;
+}
+
+.body0012 {
+    position: absolute;
+    top: 152px;
+    right: -0.01px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    width: 462.1px;
+    height: 375px;
+}
+
+.vendors-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 532px;
+    height: 527px;
+    object-fit: cover;
+}
+
+.international-recipies {
+    width: 1088px;
+    position: relative;
+    height: 527px;
+}
+
+.body0013 {
+    position: absolute;
+    top: 158px;
+    right: 621px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    width: 467px;
+    height: 364px;
+}
+
+.vegan-icon {
+    position: absolute;
+    top: 0px;
+    left: 556px;
+    width: 532px;
+    height: 522px;
+    object-fit: cover;
+}
+
+.good-vegan-food {
+    width: 1088px;
+    position: relative;
+    height: 522px;
+}
+
+.about-sections {
+    position: absolute;
+    width: calc(100% - 352px);
+    top: 1014px;
+    right: 176px;
+    left: 176px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 31px 205px;
-    box-sizing: border-box;
-    text-align: center;
-    font-size: 96px;
+    gap: 125px;
+    color: #292823;
 }
 
-.cafe-view-icon {
-    width: 100%;
+.slogan {
+    width: 686px;
     position: absolute;
     margin: 0 !important;
-    top: 0px;
-    right: 0px;
-    left: 0px;
-    max-width: 100%;
-    overflow: hidden;
-    height: 300px;
-    flex-shrink: 0;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.food-2-icon {
-    width: 100%;
-    position: absolute;
-    margin: 0 !important;
-    top: 327px;
-    right: 0px;
-    left: 0px;
-    max-width: 100%;
-    overflow: hidden;
-    height: 413px;
-    flex-shrink: 0;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.stacked {
-    width: 450px;
-    height: 740px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative;
-    gap: 27px;
-    z-index: 0;
-}
-
-.food-1-icon {
-    width: 61.45%;
-    position: absolute;
-    margin: 0 !important;
-    top: 0px;
-    right: 0%;
-    left: 38.55%;
-    max-width: 100%;
-    overflow: hidden;
-    height: 740px;
-    flex-shrink: 0;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.photos {
-    position: absolute;
-    top: 1048px;
-    left: calc(50% - 621px);
-    width: 1240px;
-    height: 740px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 22px;
-    min-width: 300px;
-}
-
-.hero-text {
-    width: 100%;
-    position: absolute;
-    align-self: center;
-    padding-bottom: 5%;
-    margin: 0 !important;
-    display: inline;
-    text-shadow: 0px 5px 7px rgba(0, 0, 0, 0.4);
+    top: calc(50% - 75.5px);
+    left: calc(50% - 343px);
+    display: inline-block;
     z-index: 0;
 }
 
 .hero {
     position: absolute;
     width: 100%;
-    top: 89px;
+    top: 87px;
     right: 0px;
     left: 0px;
-    bottom: 100px;
-    height: 60%;
-    display: block;
+    height: 805px;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 200px 334px;
+    padding: 270px 377px;
     box-sizing: border-box;
     background-image: url('hero.png');
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
     text-align: center;
     font-size: 128px;
-    color: #f6f0f0;
 }
 
+/* .header1: Removed box-shadow and border to remove unwanted borders */
 .header1 {
     position: absolute;
     width: 100%;
     top: 0px;
     right: 0px;
     left: 0px;
-    box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: none;
+    border: none;
     background-color: #f6f0f0;
     height: 89px;
 }
@@ -437,6 +464,7 @@ a:active {
     justify-content: flex-start;
     padding: 10px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .header {
@@ -447,16 +475,17 @@ a:active {
     left: 0px;
     height: 89px;
     font-size: 35px;
+    color: #292823;
 }
 
-.index {
+.about {
     width: 100%;
     position: relative;
     background-color: #f6f0f0;
-    height: 3546px;
+    height: 4339px;
     overflow: hidden;
     text-align: left;
-    font-size: 24px;
-    color: #292823;
+    font-size: 64px;
+    color: #f6f0f0;
     font-family: Kameron;
 }
