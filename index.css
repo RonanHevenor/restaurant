@@ -1,0 +1,175 @@
+.garden001-icon {
+    width: 750px;
+    position: relative;
+    height: 740px;
+    object-fit: cover;
+}
+
+.header002 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: inline-block;
+    width: 446px;
+}
+
+.at-dandelion-cafe {
+    margin: 0;
+}
+
+.body001-txt {
+    width: 100%;
+}
+
+.body001 {
+    position: absolute;
+    top: 96px;
+    right: 0px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    width: 446px;
+    height: 392px;
+}
+
+.about-text {
+    width: 446px;
+    position: relative;
+    height: 488px;
+}
+
+.about {
+    position: absolute;
+    height: 19.64%;
+    width: calc(100% - 199px);
+    top: 66.72%;
+    right: 96px;
+    bottom: 13.64%;
+    left: 103px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 45px;
+}
+
+.slogan {
+    position: absolute;
+    top: 2105px;
+    left: 274px;
+    font-size: 96px;
+    text-align: center;
+}
+
+.home-photos-icon {
+    position: absolute;
+    top: 1183px;
+    left: 103px;
+    width: 1234px;
+    height: 740px;
+}
+
+.hero-text {
+    position: relative;
+    text-shadow: 0px 5px 7px rgba(0, 0, 0, 0.4);
+}
+
+.hero-text-image {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    right: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 299px 287px;
+    box-sizing: border-box;
+    background-image: url('hero text & image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    text-align: center;
+    font-size: 128px;
+    color: #f6f0f0;
+}
+
+.header2 {
+    width: 1440px;
+    position: relative;
+    box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.25);
+    background-color: #f6f0f0;
+    height: 100px;
+}
+
+.header1 {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.menu {
+    position: relative;
+}
+
+.page-links {
+    position: absolute;
+    top: 39px;
+    right: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+.placeholder-logo-icon {
+    width: 66.1px;
+    position: relative;
+    max-height: 100%;
+}
+
+.placeholder-logo-wrapper {
+    position: absolute;
+    top: 17px;
+    left: 25px;
+    width: 86.1px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.header {
+    position: absolute;
+    width: calc(100% + 20px);
+    top: -10px;
+    right: -10px;
+    left: -10px;
+    height: 120px;
+    font-size: 35px;
+}
+
+.index {
+    width: 100%;
+    position: relative;
+    background-color: #f6f0f0;
+    height: 3768px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 64px;
+    color: #292823;
+    font-family: Kameron;
+}
