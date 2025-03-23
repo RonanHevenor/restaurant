@@ -203,9 +203,9 @@ a:active {
 }
 
 .vector-icon1 {
-    width: 24px;
+    width: 40px;
     position: relative;
-    height: 24px;
+    height: 40px;
 }
 
 .vector-wrapper {
@@ -448,23 +448,23 @@ a:active {
 }
 
 .placeholder-logo-icon {
-    width: 66.1px;
+    width: 100px;
     position: relative;
-    max-height: 100%;
+    max-height: 100px;
 }
 
 .logo {
     position: absolute;
     top: 2px;
-    left: 28px;
-    width: 86.1px;
+    left: 0;
+    height: 100%;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 10px;
     box-sizing: border-box;
-    cursor: pointer;
 }
 
 .header {

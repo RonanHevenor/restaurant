@@ -1,0 +1,347 @@
+/* Global resets for margins, paddings, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default link styling so links inherit parent styles */
+a,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Existing styles with inline carousel alignment adjustments */
+/* ---------------------------------------------------------------------- */
+
+/* Carousel slide images */
+.slides-box-icon {
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Slogan spacing */
+.slogan {
+    margin: 60px auto 0 auto;
+    font-size: 64px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Remove box shadows and borders from header elements to avoid unwanted borders */
+.header2 {
+    align-self: stretch;
+    position: relative;
+    box-shadow: none;
+    background-color: #f6f0f0;
+    height: 89px;
+}
+
+.header1 {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-shadow: none;
+    border: none;
+}
+
+.about {
+    position: relative;
+    cursor: pointer;
+}
+
+.about1 {
+    position: relative;
+}
+
+.page-links {
+    position: absolute;
+    top: 24px;
+    right: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+.placeholder-logo-icon {
+    width: 66.1px;
+    position: relative;
+    max-height: 100%;
+}
+
+.logo {
+    position: absolute;
+    top: 2px;
+    left: 28px;
+    width: 86.1px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.header {
+    position: absolute;
+    width: calc(100% + 20px);
+    top: 0px;
+    right: -20px;
+    left: 0px;
+    height: 89px;
+}
+
+.frame-child {
+    align-self: stretch;
+    position: relative;
+    box-shadow: none;
+    background-color: #292823;
+    height: 400px;
+}
+
+.footer-inner {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 0px;
+    box-sizing: border-box;
+}
+
+.header003 {
+    position: absolute;
+    bottom: 111px;
+    left: calc(50% - 112.5px);
+    font-size: 24px;
+    display: inline-block;
+    width: 257px;
+}
+
+.clock-icon {
+    position: absolute;
+    bottom: 117px;
+    left: calc(50% - 144.5px);
+    width: 20px;
+    height: 20px;
+}
+
+.monday {
+    margin: 0;
+}
+
+.days {
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 90.5px);
+    display: inline-block;
+    width: 130px;
+    height: 105px;
+}
+
+.times {
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% + 39.5px);
+    display: inline-block;
+    width: 105px;
+    height: 105px;
+}
+
+.hours {
+    width: 289px;
+    position: relative;
+    height: 139px;
+    font-size: 13px;
+}
+
+.header0031 {
+    position: absolute;
+    bottom: 59px;
+    left: calc(50% - 111px);
+    display: inline-block;
+    width: 257px;
+    cursor: pointer;
+}
+
+.adress {
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 89px);
+    font-size: 13px;
+    display: inline-block;
+    width: 235px;
+    height: 53px;
+}
+
+.phone-icon {
+    position: absolute;
+    bottom: 58px;
+    left: calc(50% - 146px);
+    width: 24px;
+    height: 24px;
+}
+
+.contact {
+    width: 292px;
+    position: relative;
+    height: 87px;
+}
+
+.header0032 {
+    position: absolute;
+    bottom: 81px;
+    left: calc(50% - 109px);
+    display: inline-block;
+    width: 255px;
+}
+
+.instagram {
+    font-family: Kameron;
+}
+
+.links {
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 87px);
+    font-size: 13px;
+    display: inline-block;
+    width: 233px;
+    height: 75px;
+}
+
+.vector-icon {
+    position: absolute;
+    bottom: 82px;
+    left: calc(50% - 146px);
+    width: 24px;
+    height: 24px;
+}
+
+.follow {
+    width: 292px;
+    position: relative;
+    height: 109px;
+}
+
+.hours-parent {
+    position: absolute;
+    width: calc(100% - 303px);
+    top: 162px;
+    right: 162px;
+    left: 141px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 142px;
+}
+
+.header002 {
+    width: 307px;
+    position: absolute;
+    margin: 0 !important;
+    top: 10px;
+    left: calc(50% - 165px);
+    display: inline-block;
+    z-index: 0;
+}
+
+.header002-wrapper {
+    position: absolute;
+    width: calc(100% - 1130px);
+    top: 57px;
+    right: 1030px;
+    left: 100px;
+    height: 96px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    font-size: 64px;
+}
+
+.vector-icon1 {
+    width: 24px;
+    position: relative;
+    height: 24px;
+}
+
+.vector-wrapper {
+    position: absolute;
+    width: calc(100% - 1436px);
+    top: 326px;
+    right: 138px;
+    left: 1298px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.footer {
+    position: absolute;
+    width: calc(100% + 20px);
+    top: 3397px;
+    right: 0px;
+    left: -20px;
+    height: 420px;
+    font-size: 24px;
+    color: #f6f0f0;
+}
+
+/* Dandelion cafe menu page image styling */
+.dandelion-cafe-menupdf-page {
+    position: absolute;
+    width: calc(100% - 399px);
+    top: 969px;
+    right: 199px;
+    left: 200px;
+    max-width: 100%;
+    overflow: hidden;
+    height: 1258px;
+    object-fit: cover;
+}
+
+/* Main menu container */
+.menu {
+    width: 100%;
+    position: relative;
+    background-color: #f6f0f0;
+    height: 3803px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 35px;
+    color: #292823;
+    font-family: Kameron;
+}

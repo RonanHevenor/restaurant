@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <link rel="stylesheet" href="./menu.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&display=swap" />
+  <style>
+    /* Inline CSS for the carousel containers */
+    #carousel, #carousel2, #carousel3, #carousel4, #carousel5 {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 600px;
+      margin: 40px auto 20px auto; /* spacing from elements above */
+    }
+    #carousel img, 
+    #carousel2 img, 
+    #carousel3 img, 
+    #carousel4 img, 
+    #carousel5 img {
+      width: 100%;
+      display: none;
+    }
+    #carousel img.active,
+    #carousel2 img.active,
+    #carousel3 img.active,
+    #carousel4 img.active,
+    #carousel5 img.active {
+      display: block;
+    }
+    /* Navigation buttons */
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .prev {
+      left: 10px;
+    }
+    .next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <!-- Header Section -->
+    <div class="header" data-scroll-to="headerContainer">
+      <div class="header1"></div>
+      <div class="page-links">
+        <div class="menu" id="menuText"><a href=".\menu.html">Menu</a></div>
+        <div class="menu" id="aboutText"><a href=".\about.html">About</a></div>
+        <div class="menu" id="aboutText1"><a href="#contact">Contact</a></div>
+      </div>
+      <div class="logo" id="logoContainer">
+        <a href="./index.html">
+          <img class="placeholder-logo-icon" alt="" src="Placeholder Logo.svg">
+        </a>
+      </div>
+    </div>
+
+    <!-- Slogan -->
+    <div class="slogan">Menu</div>
+
+    <!-- Initial Carousel -->
+    <div id="carousel">
+      <img src="food 1.png" class="active" alt="Food 1">
+      <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+      <button class="nav-btn next" id="nextBtn">&#10095;</button>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+      <div class="footer-inner">
+        <div class="frame-child"></div>
+      </div>
+      <div class="hours-parent">
+        <div class="hours">
+          <div class="header003">Hours</div>
+          <img class="clock-icon" alt="" src="clock.svg">
+          <div class="days">
+            <p class="monday">Monday</p>
+            <p class="monday">Tuesday</p>
+            <p class="monday">Wednesday</p>
+            <p class="monday">Thursday</p>
+            <p class="monday">Friday</p>
+            <p class="monday">Saturday</p>
+            <p class="monday">Sunday</p>
+          </div>
+          <div class="times">
+            <p class="monday">7 AM - 4 PM</p>
+            <p class="monday">7 AM - 4 PM</p>
+            <p class="monday">7 AM - 4 PM</p>
+            <p class="monday">7 AM - 4 PM</p>
+            <p class="monday">7 AM - 9 PM</p>
+            <p class="monday">7 AM - 9 PM</p>
+            <p class="monday">7 AM - 9 PM</p>
+          </div>
+        </div>
+        <div class="contact">
+          <div class="header0031" id="header003Text">Contact Us</div>
+          <div class="adress">
+            <p class="monday">123 Green Street, Hometown, USA</p>
+            <p class="monday">Phone: (123) 456-7890</p>
+            <p class="monday">Email: info@dandelioncafe.com</p>
+          </div>
+          <img class="phone-icon" alt="" src="phone.svg">
+        </div>
+        <div class="follow">
+          <div class="header0032">Follow Us</div>
+          <div class="links">
+            <p class="monday">
+              <b class="instagram">Instagram:</b>
+              <span> @DandelionCafeEats </span>
+            </p>
+            <p class="monday">
+              <b class="instagram">Facebook:</b>
+              <span> Dandelion Cafe</span>
+            </p>
+            <p class="monday">&nbsp;</p>
+            <p class="monday">Join us at Dandelion Cafe for a taste of something special!</p>
+          </div>
+          <img class="vector-icon" alt="" src="Vector.svg">
+        </div>
+      </div>
+      <div class="header002-wrapper">
+        <div class="header002">Contact Us</div>
+      </div>
+      <div class="vector-wrapper">
+        <img class="vector-icon1" alt="" src="Vector.svg">
+      </div>
+    </div>
+
+    <img class="dandelion-cafe-menupdf-page" alt="" src="food 2.png">
+
+    <!-- Additional Carousels Below PDF -->
+    <div id="carousel2">
+      <img src="1.png" class="active" alt="1">
+      <img src="2.png" alt="2">
+      <img src="3.png" alt="3">
+      <img src="4.png" alt="4">
+      <button class="nav-btn prev" id="prevBtn2">&#10094;</button>
+      <button class="nav-btn next" id="nextBtn2">&#10095;</button>
+    </div>
+
+    <div id="carousel3">
+      <img src="5.png" class="active" alt="5">
+      <img src="6.png" alt="6">
+      <img src="7.png" alt="7">
+      <img src="8.png" alt="8">
+      <img src="9.png" alt="9">
+      <button class="nav-btn prev" id="prevBtn3">&#10094;</button>
+      <button class="nav-btn next" id="nextBtn3">&#10095;</button>
+    </div>
+
+    <div id="carousel4">
+      <img src="10.png" class="active" alt="10">
+      <img src="11.png" alt="11">
+      <img src="12.png" alt="12">
+      <img src="13.png" alt="13">
+      <button class="nav-btn prev" id="prevBtn4">&#10094;</button>
+      <button class="nav-btn next" id="nextBtn4">&#10095;</button>
+    </div>
+
+    <div id="carousel5">
+      <img src="14.png" class="active" alt="14">
+      <img src="15.png" alt="15">
+      <img src="16.png" alt="16">
+      <img src="17.png" alt="17">
+      <button class="nav-btn prev" id="prevBtn5">&#10094;</button>
+      <button class="nav-btn next" id="nextBtn5">&#10095;</button>
+    </div>
+
+  </div>
+  
+  <script>
+    // Helper function to set up a carousel
+    function setupCarousel(carouselId, prevBtnId, nextBtnId) {
+      var carousel = document.getElementById(carouselId);
+      var images = carousel.getElementsByTagName("img");
+      var currentIndex = 0;
+      var totalImages = images.length;
+
+      function showImage(index) {
+        for (var i = 0; i < totalImages; i++) {
+          images[i].classList.remove("active");
+        }
+        images[index].classList.add("active");
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showImage(currentIndex);
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showImage(currentIndex);
+      }
+
+      // Automatic slide every 3 seconds
+      var slideInterval = setInterval(nextImage, 3000);
+
+      // Bind next and previous buttons
+      document.getElementById(nextBtnId).addEventListener("click", function() {
+        clearInterval(slideInterval);
+        nextImage();
+      });
+      
+      document.getElementById(prevBtnId).addEventListener("click", function() {
+        clearInterval(slideInterval);
+        prevImage();
+      });
+    }
+
+    // Set up all carousels
+    setupCarousel("carousel", "prevBtn", "nextBtn");
+    setupCarousel("carousel2", "prevBtn2", "nextBtn2");
+    setupCarousel("carousel3", "prevBtn3", "nextBtn3");
+    setupCarousel("carousel4", "prevBtn4", "nextBtn4");
+    setupCarousel("carousel5", "prevBtn5", "nextBtn5");
+
+    // Existing event listeners
+    var menuText = document.getElementById("menuText");
+    if (menuText) {
+      menuText.addEventListener("click", function (e) {
+        window.location.href = "Menu.html";
+      });
+    }
+    
+    var aboutText = document.getElementById("aboutText");
+    if (aboutText) {
+      aboutText.addEventListener("click", function (e) {
+        // Add your code here
+      });
+    }
+    
+    var logoContainer = document.getElementById("logoContainer");
+    if (logoContainer) {
+      logoContainer.addEventListener("click", function (e) {
+        // Add your code here
+      });
+    }
+    
+    var header003Text = document.getElementById("header003Text");
+    if (header003Text) {
+      header003Text.addEventListener("click", function (e) {
+        window.location.href = "Menu.html";
+      });
+    }
+  </script>
+</body>
+</html>
