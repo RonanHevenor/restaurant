@@ -1,0 +1,176 @@
+.header002 {
+    position: absolute;
+    top: 0px;
+    right: 621px;
+    display: inline-block;
+    width: 467px;
+}
+
+.to-design-this {
+    margin: 0;
+}
+
+.body001 {
+    position: absolute;
+    top: 76px;
+    right: 621px;
+    font-size: 24px;
+    display: inline-block;
+    width: 467px;
+    height: 392px;
+}
+
+.ship-icon {
+    position: absolute;
+    top: 0px;
+    left: 556px;
+    width: 532px;
+    height: 550px;
+    object-fit: cover;
+}
+
+.enviorment {
+    position: absolute;
+    top: 315px;
+    right: 176px;
+    width: 1088px;
+    height: 550px;
+}
+
+.while-working-on {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.enviorment1 {
+    position: absolute;
+    top: 914px;
+    right: 176px;
+    width: 1088px;
+    height: 550px;
+}
+
+.body0012 {
+    position: absolute;
+    top: 76px;
+    right: 621px;
+    font-size: 24px;
+    display: inline-block;
+    width: 467px;
+    height: 448px;
+}
+
+.enviorment2 {
+    position: absolute;
+    top: 1513px;
+    right: 176px;
+    width: 1088px;
+    height: 550px;
+}
+
+.enviorment3 {
+    position: absolute;
+    top: 2711px;
+    right: 176px;
+    width: 1088px;
+    height: 550px;
+}
+
+.enviorment4 {
+    position: absolute;
+    top: 2112px;
+    right: 176px;
+    width: 1088px;
+    height: 550px;
+}
+
+.body0015 {
+    position: absolute;
+    top: 3333px;
+    right: 176px;
+    font-size: 24px;
+    display: inline-block;
+    width: 1088px;
+    height: 84px;
+}
+
+.header1 {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.25);
+    background-color: #f6f0f0;
+    height: 89px;
+}
+
+.menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.about1 {
+    position: relative;
+}
+
+.page-links {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+.placeholder-logo-icon {
+    width: 66.1px;
+    position: relative;
+    max-height: 100%;
+}
+
+.logo {
+    position: absolute;
+    top: 2px;
+    left: 28px;
+    width: 86.1px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 89px;
+    font-size: 35px;
+}
+
+.hero-text {
+    position: absolute;
+    top: 126px;
+    left: calc(50% - 448px);
+    font-size: 128px;
+    text-align: center;
+}
+
+.reference {
+    width: 100%;
+    position: relative;
+    background-color: #f6f0f0;
+    height: 3543px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 64px;
+    color: #292823;
+    font-family: Kameron;
+}
