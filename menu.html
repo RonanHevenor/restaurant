@@ -6,10 +6,18 @@
   <link rel="stylesheet" href="./menu.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&display=swap" />
   <style>
+    /* Hide the body until all assets are loaded */
+    body {
+      visibility: hidden;
+    }
     /* Inline CSS for the carousel containers */
-    #carousel, #carousel2, #carousel3, #carousel4, #carousel5 {
+    #carousel, 
+    #carousel2, 
+    #carousel3, 
+    #carousel4, 
+    #carousel5 {
       position: relative;
-      overflow: hidden;
+      overflow: hidden; /* changed from auto so extra parts are truncated */
       width: 100%;
       max-width: 600px;
       margin: 40px auto 20px auto; /* spacing from elements above */
@@ -28,24 +36,6 @@
     #carousel4 img.active,
     #carousel5 img.active {
       display: block;
-    }
-    /* Navigation buttons */
-    .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 18px;
-    }
-    .prev {
-      left: 10px;
-    }
-    .next {
-      right: 10px;
     }
   </style>
 </head>
@@ -72,12 +62,54 @@
     <!-- Initial Carousel -->
     <div id="carousel">
       <img src="food 1.png" class="active" alt="Food 1">
+      <img src="food 2.png" class="active" alt="Food 2">
       <button class="nav-btn prev" id="prevBtn">&#10094;</button>
       <button class="nav-btn next" id="nextBtn">&#10095;</button>
     </div>
 
-    <!-- Footer Section -->
-    <div class="footer">
+    <!-- Menu PDF Image (in normal flow) -->
+    <img class="dandelion-cafe-menupdf-page" alt="food 2" src="food 2.png">
+
+    <!-- Additional Carousels Below the PDF -->
+    <div id="carousel2">
+      <img src="1.png" class="active" alt="1">
+      <img src="2.png" alt="2">
+      <img src="3.png" alt="3">
+      <img src="4.png" alt="4">
+      <button class="nav-btn prev" id="prevBtn2">&#10094;</button>
+      <button class="nav-btn next" id="nextBtn2">&#10095;</button>
+    </div>
+
+    <div id="carousel3">
+      <img src="5.png" class="active" alt="5">
+      <img src="6.png" alt="6">
+      <img src="7.png" alt="7">
+      <img src="8.png" alt="8">
+      <img src="9.png" alt="9">
+      <button class="nav-btn prev" id="prevBtn3">&#10094;</button>
+      <button class="nav-btn next" id="nextBtn3">&#10095;</button>
+    </div>
+
+    <div id="carousel4">
+      <img src="10.png" class="active" alt="10">
+      <img src="11.png" alt="11">
+      <img src="12.png" alt="12">
+      <img src="13.png" alt="13">
+      <button class="nav-btn prev" id="prevBtn4">&#10094;</button>
+      <button class="nav-btn next" id="nextBtn4">&#10095;</button>
+    </div>
+
+    <div id="carousel5">
+      <img src="14.png" class="active" alt="14">
+      <img src="15.png" alt="15">
+      <img src="16.png" alt="16">
+      <img src="17.png" alt="17">
+      <button class="nav-btn prev" id="prevBtn5">&#10094;</button>
+      <button class="nav-btn next" id="nextBtn5">&#10095;</button>
+    </div>
+
+    <!-- Footer Section (bottom of page) -->
+    <div class="footer" id="contact">
       <div class="footer-inner">
         <div class="frame-child"></div>
       </div>
@@ -137,124 +169,146 @@
         <img class="vector-icon1" alt="" src="Vector.svg">
       </div>
     </div>
-
-    <img class="dandelion-cafe-menupdf-page" alt="" src="food 2.png">
-
-    <!-- Additional Carousels Below PDF -->
-    <div id="carousel2">
-      <img src="1.png" class="active" alt="1">
-      <img src="2.png" alt="2">
-      <img src="3.png" alt="3">
-      <img src="4.png" alt="4">
-      <button class="nav-btn prev" id="prevBtn2">&#10094;</button>
-      <button class="nav-btn next" id="nextBtn2">&#10095;</button>
-    </div>
-
-    <div id="carousel3">
-      <img src="5.png" class="active" alt="5">
-      <img src="6.png" alt="6">
-      <img src="7.png" alt="7">
-      <img src="8.png" alt="8">
-      <img src="9.png" alt="9">
-      <button class="nav-btn prev" id="prevBtn3">&#10094;</button>
-      <button class="nav-btn next" id="nextBtn3">&#10095;</button>
-    </div>
-
-    <div id="carousel4">
-      <img src="10.png" class="active" alt="10">
-      <img src="11.png" alt="11">
-      <img src="12.png" alt="12">
-      <img src="13.png" alt="13">
-      <button class="nav-btn prev" id="prevBtn4">&#10094;</button>
-      <button class="nav-btn next" id="nextBtn4">&#10095;</button>
-    </div>
-
-    <div id="carousel5">
-      <img src="14.png" class="active" alt="14">
-      <img src="15.png" alt="15">
-      <img src="16.png" alt="16">
-      <img src="17.png" alt="17">
-      <button class="nav-btn prev" id="prevBtn5">&#10094;</button>
-      <button class="nav-btn next" id="nextBtn5">&#10095;</button>
-    </div>
-
   </div>
   
   <script>
-    // Helper function to set up a carousel
-    function setupCarousel(carouselId, prevBtnId, nextBtnId) {
-      var carousel = document.getElementById(carouselId);
-      var images = carousel.getElementsByTagName("img");
-      var currentIndex = 0;
-      var totalImages = images.length;
-
-      function showImage(index) {
-        for (var i = 0; i < totalImages; i++) {
-          images[i].classList.remove("active");
-        }
-        images[index].classList.add("active");
-      }
-
-      function nextImage() {
-        currentIndex = (currentIndex + 1) % totalImages;
-        showImage(currentIndex);
-      }
-
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-        showImage(currentIndex);
-      }
-
-      // Automatic slide every 3 seconds
-      var slideInterval = setInterval(nextImage, 3000);
-
-      // Bind next and previous buttons
-      document.getElementById(nextBtnId).addEventListener("click", function() {
-        clearInterval(slideInterval);
-        nextImage();
-      });
+    window.addEventListener("load", function() {
+      // Reveal the page once all assets are loaded
+      document.body.style.visibility = "visible";
       
-      document.getElementById(prevBtnId).addEventListener("click", function() {
-        clearInterval(slideInterval);
-        prevImage();
-      });
-    }
-
-    // Set up all carousels
-    setupCarousel("carousel", "prevBtn", "nextBtn");
-    setupCarousel("carousel2", "prevBtn2", "nextBtn2");
-    setupCarousel("carousel3", "prevBtn3", "nextBtn3");
-    setupCarousel("carousel4", "prevBtn4", "nextBtn4");
-    setupCarousel("carousel5", "prevBtn5", "nextBtn5");
-
-    // Existing event listeners
-    var menuText = document.getElementById("menuText");
-    if (menuText) {
-      menuText.addEventListener("click", function (e) {
-        window.location.href = "Menu.html";
-      });
-    }
-    
-    var aboutText = document.getElementById("aboutText");
-    if (aboutText) {
-      aboutText.addEventListener("click", function (e) {
-        // Add your code here
-      });
-    }
-    
-    var logoContainer = document.getElementById("logoContainer");
-    if (logoContainer) {
-      logoContainer.addEventListener("click", function (e) {
-        // Add your code here
-      });
-    }
-    
-    var header003Text = document.getElementById("header003Text");
-    if (header003Text) {
-      header003Text.addEventListener("click", function (e) {
-        window.location.href = "Menu.html";
-      });
-    }
+      // Helper: Get an image's height even if it's hidden
+      function getImageHeight(img) {
+        // Save original inline styles
+        var originalDisplay = img.style.display;
+        var originalVisibility = img.style.visibility;
+        var originalPosition = img.style.position;
+        // If computed display is none, temporarily show it for measurement
+        if (window.getComputedStyle(img).display === "none") {
+          img.style.display = "block";
+          img.style.visibility = "hidden";
+          img.style.position = "absolute";
+        }
+        var height = img.offsetHeight;
+        // Restore the original styles
+        img.style.display = originalDisplay;
+        img.style.visibility = originalVisibility;
+        img.style.position = originalPosition;
+        return height;
+      }
+      
+      // Function to adjust a carousel container's height to match its smallest image
+      function adjustCarouselHeight(carouselId) {
+        var carousel = document.getElementById(carouselId);
+        var images = carousel.getElementsByTagName("img");
+        var minHeight = Infinity;
+        for (var i = 0; i < images.length; i++) {
+          var imgHeight = getImageHeight(images[i]);
+          if (imgHeight < minHeight) {
+            minHeight = imgHeight;
+          }
+        }
+        carousel.style.height = minHeight + "px";
+        carousel.style.overflow = "hidden";
+      }
+      
+      // Adjust each carousel's height
+      var carouselIds = ["carousel", "carousel2", "carousel3", "carousel4", "carousel5"];
+      for (var j = 0; j < carouselIds.length; j++) {
+        adjustCarouselHeight(carouselIds[j]);
+      }
+      
+      // Helper function to set up a carousel
+      function setupCarousel(carouselId, prevBtnId, nextBtnId) {
+        var carousel = document.getElementById(carouselId);
+        var images = carousel.getElementsByTagName("img");
+        var currentIndex = 0;
+        var totalImages = images.length;
+      
+        // Gather button references for bounce animations
+        var prevBtn = document.getElementById(prevBtnId);
+        var nextBtn = document.getElementById(nextBtnId);
+      
+        // Show the initial image
+        function showImage(index) {
+          for (var i = 0; i < totalImages; i++) {
+            images[i].classList.remove("active");
+          }
+          images[index].classList.add("active");
+        }
+      
+        function nextImage() {
+          currentIndex = (currentIndex + 1) % totalImages;
+          showImage(currentIndex);
+        }
+      
+        function prevImage() {
+          currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+          showImage(currentIndex);
+        }
+      
+        // Automatic slide every 3 seconds
+        var slideInterval = setInterval(nextImage, 3000);
+      
+        // Button events with bounce animations
+        if (nextBtn) {
+          nextBtn.addEventListener("click", function() {
+            clearInterval(slideInterval);
+            nextBtn.classList.add("bounce-right");
+            setTimeout(function() {
+              nextBtn.classList.remove("bounce-right");
+            }, 300);
+            nextImage();
+          });
+        }
+      
+        if (prevBtn) {
+          prevBtn.addEventListener("click", function() {
+            clearInterval(slideInterval);
+            prevBtn.classList.add("bounce-left");
+            setTimeout(function() {
+              prevBtn.classList.remove("bounce-left");
+            }, 300);
+            prevImage();
+          });
+        }
+      }
+      
+      // Set up all carousels
+      setupCarousel("carousel", "prevBtn", "nextBtn");
+      setupCarousel("carousel2", "prevBtn2", "nextBtn2");
+      setupCarousel("carousel3", "prevBtn3", "nextBtn3");
+      setupCarousel("carousel4", "prevBtn4", "nextBtn4");
+      setupCarousel("carousel5", "prevBtn5", "nextBtn5");
+      
+      // Existing event listeners
+      var menuText = document.getElementById("menuText");
+      if (menuText) {
+        menuText.addEventListener("click", function () {
+          window.location.href = "Menu.html";
+        });
+      }
+      
+      var aboutText = document.getElementById("aboutText");
+      if (aboutText) {
+        aboutText.addEventListener("click", function () {
+          // Add your code here if needed
+        });
+      }
+      
+      var logoContainer = document.getElementById("logoContainer");
+      if (logoContainer) {
+        logoContainer.addEventListener("click", function () {
+          // Add your code here if needed
+        });
+      }
+      
+      var header003Text = document.getElementById("header003Text");
+      if (header003Text) {
+        header003Text.addEventListener("click", function () {
+          window.location.href = "Menu.html";
+        });
+      }
+    });
   </script>
 </body>
 </html>

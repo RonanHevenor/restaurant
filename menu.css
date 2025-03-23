@@ -11,6 +11,11 @@ body {
     padding: 0;
 }
 
+/* Hide body until fully loaded */
+body {
+    visibility: hidden;
+}
+
 /* Remove default link styling so links inherit parent styles */
 a,
 a:visited,
@@ -21,10 +26,73 @@ a:active {
 }
 
 /* ---------------------------------------------------------------------- */
-/* Existing styles with inline carousel alignment adjustments */
+/* Carousel and arrow button adjustments */
 /* ---------------------------------------------------------------------- */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Spread them more to the sides */
+    background-color: #292823;
+    color: #F6F0F0;
+    /* Make arrow color blue */
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
 
-/* Carousel slide images */
+.prev {
+    left: 50px;
+    /* Move the left arrow further left */
+}
+
+.next {
+    right: 50px;
+    /* Move the right arrow further right */
+}
+
+/* Bounce animation classes */
+.bounce-right {
+    animation: bounceRight 0.3s ease forwards;
+}
+
+.bounce-left {
+    animation: bounceLeft 0.3s ease forwards;
+}
+
+@keyframes bounceRight {
+    0% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-50%) translateX(20px);
+    }
+
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+@keyframes bounceLeft {
+    0% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-50%) translateX(-20px);
+    }
+
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Existing styles with adjusted positioning for PDF image */
+/* ---------------------------------------------------------------------- */
 .slides-box-icon {
     align-self: stretch;
     flex: 1;
@@ -43,7 +111,7 @@ a:active {
     width: 100%;
 }
 
-/* Remove box shadows and borders from header elements to avoid unwanted borders */
+/* Header adjustments */
 .header2 {
     align-self: stretch;
     position: relative;
@@ -123,12 +191,18 @@ a:active {
     height: 400px;
 }
 
-.footer-inner {
-    position: absolute;
+/* Footer is positioned at bottom in normal flow */
+.footer {
+    position: relative;
     width: 100%;
-    top: 0px;
-    right: 0px;
-    left: 0px;
+    margin-top: 60px;
+    font-size: 24px;
+    color: #f6f0f0;
+    background-color: transparent;
+}
+
+.footer-inner {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -309,27 +383,13 @@ a:active {
     justify-content: flex-end;
 }
 
-.footer {
-    position: absolute;
-    width: calc(100% + 20px);
-    top: 3397px;
-    right: 0px;
-    left: -20px;
-    height: 420px;
-    font-size: 24px;
-    color: #f6f0f0;
-}
-
-/* Dandelion cafe menu page image styling */
+/* Dandelion cafe menu page image styling (in normal flow) */
 .dandelion-cafe-menupdf-page {
-    position: absolute;
-    width: calc(100% - 399px);
-    top: 969px;
-    right: 199px;
-    left: 200px;
-    max-width: 100%;
-    overflow: hidden;
-    height: 1258px;
+    display: block;
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    height: auto;
     object-fit: cover;
 }
 
@@ -338,7 +398,7 @@ a:active {
     width: 100%;
     position: relative;
     background-color: #f6f0f0;
-    height: 3803px;
+    min-height: 100vh;
     overflow: hidden;
     text-align: left;
     font-size: 35px;
