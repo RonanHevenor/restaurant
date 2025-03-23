@@ -10,20 +10,18 @@
     body {
       visibility: hidden;
     }
-    /* Inline CSS for the carousel containers */
-    #carousel, 
+    /* Inline CSS for the carousel containers (removed #carousel references) */
     #carousel2, 
     #carousel3, 
     #carousel4, 
     #carousel5 {
       position: relative;
       overflow: hidden; /* extra parts of images will be clipped */
-      width: 100%;
-      max-width: 600px;
+      width: 200%;
+      max-width: 1000px;
       margin: 40px auto 20px auto;
-      z-index: 1; /* lower than our PDF image (if desired) */
+      z-index: 1;
     }
-    #carousel img, 
     #carousel2 img, 
     #carousel3 img, 
     #carousel4 img, 
@@ -31,7 +29,6 @@
       width: 100%;
       display: none;
     }
-    #carousel img.active,
     #carousel2 img.active,
     #carousel3 img.active,
     #carousel4 img.active,
@@ -44,35 +41,47 @@
   <div class="menu">
     <!-- Header Section -->
     <div class="header" data-scroll-to="headerContainer">
-        <div class="header1">
-        </div>
-        <div class="page-links">
-          <div class="menu" id="menuText"><a href=".\menu.html">Menu</a></div>
-          <div class="menu" id="aboutText"><a href=".\about.html">About</a></div>
-          <div class="menu" id="aboutText1"><a href="#contact">Contact</a></div>
-          <div class="about1"><a href=".\reference.html">Reference</a></div>
-    </div>
-        <div class="logo" id="logoContainer"><a href="./index.html">
+      <div class="header1"></div>
+      <div class="page-links">
+        <div class="menu" id="menuText"><a href="./menu.html">Menu</a></div>
+        <div class="menu" id="aboutText"><a href="./about.html">About</a></div>
+        <div class="menu" id="aboutText1"><a href="#contact">Contact</a></div>
+        <div class="menu"><a href="./reference.html">Reference</a></div>
+      </div>
+      <div class="logo" id="logoContainer">
+        <a href="./index.html">
           <img class="placeholder-logo-icon" alt="" src="Placeholder Logo.svg">
-      </a>
-        </div>
-  </div>
+        </a>
+      </div>
+    </div>
 
     <!-- Slogan -->
-    <div class="slogan">Menu</div>
-
-    <!-- Initial Carousel -->
-    <div id="carousel">
-      <img src="food 1.png" class="active" alt="Food 1">
-      <img src="food 2.png" class="active" alt="Food 2">
-      <button class="nav-btn prev" id="prevBtn">&#10094;</button>
-      <button class="nav-btn next" id="nextBtn">&#10095;</button>
-    </div>
+    <div class="slogan"></div>
 
     <!-- Menu PDF Image (in normal flow) -->
-    <img class="dandelion-cafe-menupdf-page" alt="Menu PDF" src="food 2.png">
+    <img class="dandelion-cafe-menupdf-page" alt="Menu PDF" src="DandelionCafeMenu.png">
 
-    <!-- Additional Carousels Below the PDF -->
+    <!-- About Section in a yellow bar -->
+    <div class="rectangle-div">
+      <div class="about-content">
+        <div class="header234">About Our Recipes</div>
+        <div class="body234">
+          <p>
+            At Dandelion Cafe, we believe in making healthy, sustainable eating accessible to everyone.
+            That’s why we share our recipes with you! While some might think this would hurt business,
+            we know that many people don’t always want to cook or simply enjoy the atmosphere of dining out.
+          </p>
+          <p class="p2">
+            Our goal is to empower you to make nutritious meals at home while also providing a welcoming
+            space where you can enjoy fresh, wholesome food in a comfortable environment. Whether you’re
+            recreating our dishes in your own kitchen or joining us for a meal, we’re here to make healthy
+            and sustainable eating as easy and enjoyable as possible.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Carousels Below the About Section -->
     <div id="carousel2">
       <img src="1.png" class="active" alt="1">
       <img src="2.png" alt="2">
@@ -167,13 +176,23 @@
       <div class="header002-wrapper">
         <div class="header002">Contact Us</div>
       </div>
-      <div class="vector-wrapper">
-        <img class="vector-icon1" alt="Vector" src="Vector.svg">
+      <div class="vector-wrapper" id="frameContainer3">
+        <img class="vector-icon1" alt="" src="arrow.svg">
       </div>
     </div>
   </div>
   
   <script>
+    var frameContainer3 = document.getElementById("frameContainer3");
+    if(frameContainer3) {
+      frameContainer3.addEventListener("click", function () {
+        var anchor = document.querySelector("[data-scroll-to='headerContainer']");
+        if(anchor) {
+          anchor.scrollIntoView({"block":"start","behavior":"smooth"});
+        }
+      });
+    }
+
     window.addEventListener("load", function() {
       // Reveal the page once all assets are loaded
       document.body.style.visibility = "visible";
@@ -210,8 +229,8 @@
         carousel.style.overflow = "hidden";
       }
       
-      // Adjust each carousel's height
-      var carouselIds = ["carousel", "carousel2", "carousel3", "carousel4", "carousel5"];
+      // Adjust each carousel's height (removed "carousel" reference)
+      var carouselIds = ["carousel2", "carousel3", "carousel4", "carousel5"];
       for (var j = 0; j < carouselIds.length; j++) {
         adjustCarouselHeight(carouselIds[j]);
       }
@@ -243,6 +262,7 @@
           showImage(currentIndex);
         }
       
+        // Auto slide every 3 seconds
         var slideInterval = setInterval(nextImage, 3000);
       
         if (nextBtn) {
@@ -268,8 +288,7 @@
         }
       }
       
-      // Initialize carousels
-      setupCarousel("carousel", "prevBtn", "nextBtn");
+      // Initialize carousels (removed setup for "carousel")
       setupCarousel("carousel2", "prevBtn2", "nextBtn2");
       setupCarousel("carousel3", "prevBtn3", "nextBtn3");
       setupCarousel("carousel4", "prevBtn4", "nextBtn4");

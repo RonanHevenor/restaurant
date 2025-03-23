@@ -1,3 +1,11 @@
+/* Remove all default browser spacing */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Positioning for the "Brainstorming" heading */
 .header002 {
     position: absolute;
     top: 0px;
@@ -32,7 +40,7 @@
 .enviorment {
     position: absolute;
     top: 315px;
-    right: 176px;
+    right: 22%;
     width: 1088px;
     height: 550px;
 }
@@ -45,7 +53,7 @@
 .enviorment1 {
     position: absolute;
     top: 914px;
-    right: 176px;
+    right: 22%;
     width: 1088px;
     height: 550px;
 }
@@ -63,7 +71,7 @@
 .enviorment2 {
     position: absolute;
     top: 1513px;
-    right: 176px;
+    right: 22%;
     width: 1088px;
     height: 550px;
 }
@@ -71,7 +79,7 @@
 .enviorment3 {
     position: absolute;
     top: 2711px;
-    right: 176px;
+    right: 22%;
     width: 1088px;
     height: 550px;
 }
@@ -79,7 +87,7 @@
 .enviorment4 {
     position: absolute;
     top: 2112px;
-    right: 176px;
+    right: 22%;
     width: 1088px;
     height: 550px;
 }
@@ -87,20 +95,21 @@
 .body0015 {
     position: absolute;
     top: 3333px;
-    right: 176px;
+    left: 550px;
     font-size: 24px;
     display: inline-block;
     width: 1088px;
     height: 84px;
 }
 
+/* Header styling */
 .header1 {
     position: absolute;
     width: 100%;
     top: 0px;
     right: 0px;
     left: 0px;
-    box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 4px 10px 4px rgba(0, 0, 0, 0.25); */
     background-color: #f6f0f0;
     height: 89px;
 }
@@ -114,6 +123,7 @@
     position: relative;
 }
 
+/* Top-right page-links container */
 .page-links {
     position: absolute;
     top: 24px;
@@ -125,6 +135,16 @@
     gap: 50px;
 }
 
+/* Make all nav links black, no underline */
+.page-links a,
+.page-links a:visited,
+.page-links a:hover,
+.page-links a:active {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Logo in top-left corner */
 .placeholder-logo-icon {
     width: 66.1px;
     position: relative;
@@ -145,6 +165,7 @@
     cursor: pointer;
 }
 
+/* Another header block (likely behind the top bar) */
 .header {
     position: absolute;
     width: 100%;
@@ -155,6 +176,20 @@
     font-size: 35px;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Large hero text near top of page */
 .hero-text {
     position: absolute;
     top: 126px;
@@ -163,7 +198,12 @@
     text-align: center;
 }
 
+/* Main container for the reference page */
 .reference {
+    margin: 0;
+    /* remove default margin */
+    padding: 0;
+    /* remove default padding */
     width: 100%;
     position: relative;
     background-color: #f6f0f0;

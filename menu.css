@@ -25,6 +25,19 @@ a:active {
     text-decoration: none;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
 /* ---------------------------------------------------------------------- */
 /* Carousel arrow styling with z-index to show on top */
 .nav-btn {
@@ -39,7 +52,6 @@ a:active {
     cursor: pointer;
     transition: transform 0.3s ease;
     z-index: 10;
-    /* ensures arrows are on top */
 }
 
 .prev {
@@ -101,8 +113,10 @@ a:active {
 }
 
 .slogan {
-    margin: 60px auto 0 auto;
-    font-size: 64px;
+    padding-top: 2vh;
+    margin-bottom: 2vh;
+    /* replaced margin: 60px auto 0 auto; */
+    font-size: 100px;
     text-align: center;
     width: 100%;
 }
@@ -111,7 +125,7 @@ a:active {
     align-self: stretch;
     position: relative;
     box-shadow: none;
-    background-color: #f6f0f0;
+    background-color: #F6F0F0;
     height: 89px;
 }
 
@@ -150,30 +164,32 @@ a:active {
 }
 
 .placeholder-logo-icon {
-    width: 66.1px;
+    width: 100px;
     position: relative;
-    max-height: 100%;
+    max-height: 100px;
 }
 
 .logo {
     position: absolute;
     top: 2px;
-    left: 28px;
-    width: 86.1px;
+    left: 0;
+    height: 100%;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 10px;
     box-sizing: border-box;
-    cursor: pointer;
 }
 
 .header {
     position: absolute;
-    width: calc(100% + 20px);
+    width: 100%;
+    /* was calc(100% + 20px) */
     top: 0;
-    right: -20px;
+    right: 0;
+    /* was -20px */
     left: 0;
     height: 89px;
 }
@@ -360,9 +376,9 @@ a:active {
 }
 
 .vector-icon1 {
-    width: 24px;
+    width: 40px;
     position: relative;
-    height: 24px;
+    height: 40px;
 }
 
 .vector-wrapper {
@@ -375,9 +391,10 @@ a:active {
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
+    cursor: grab;
 }
 
-/* Menu PDF image: ensure it appears above carousels if desired */
+/* Menu PDF image */
 .dandelion-cafe-menupdf-page {
     display: block;
     width: 80%;
@@ -393,11 +410,73 @@ a:active {
 .menu {
     width: 100%;
     position: relative;
-    background-color: #f6f0f0;
-    min-height: 100vh;
-    overflow: hidden;
+    background-color: #F6F0F0;
+    height: 100%;
+    overflow: visible;
     text-align: left;
     font-size: 35px;
     color: #292823;
     font-family: Kameron;
+}
+
+/* ---------------------------------------------------------------------- */
+/* About Section Yellow Bar */
+.about3 {
+    background-color: #FFD700;
+    /* a nice yellow */
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 1042px;
+    text-align: center;
+}
+
+.about3 .header3 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.about3 .body {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.rectangle-div {
+    width: 100%;
+    background-color: #fada7a;
+    /* Remove fixed height so the rectangle grows with content */
+    /* If you really want a fixed height, you can keep height: 571px */
+    padding: 60px 20px;
+    /* space on top/bottom and left/right */
+    box-sizing: border-box;
+}
+
+/* A centered container for the heading and body text */
+.about-content {
+    /* Restrict maximum width so text doesn't stretch too wide */
+    max-width: 800px;
+    /* Center the .about-content block horizontally */
+    margin: 0 auto;
+    /* text-align: left ensures paragraphs are left aligned */
+    text-align: left;
+}
+
+.header234 {
+    font-family: Kameron, serif;
+    font-size: 64px;
+    color: #292823;
+    margin-bottom: 20px;
+    /* space after heading */
+}
+
+.body234 {
+    font-family: Kameron, serif;
+    font-size: 24px;
+    color: #292823;
+    line-height: 1.5;
+    /* spacing between lines */
+}
+
+.p2 {
+    padding-top: 2%;
 }
