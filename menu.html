@@ -17,10 +17,11 @@
     #carousel4, 
     #carousel5 {
       position: relative;
-      overflow: hidden; /* changed from auto so extra parts are truncated */
+      overflow: hidden; /* extra parts of images will be clipped */
       width: 100%;
       max-width: 600px;
-      margin: 40px auto 20px auto; /* spacing from elements above */
+      margin: 40px auto 20px auto;
+      z-index: 1; /* lower than our PDF image (if desired) */
     }
     #carousel img, 
     #carousel2 img, 
@@ -45,13 +46,13 @@
     <div class="header" data-scroll-to="headerContainer">
       <div class="header1"></div>
       <div class="page-links">
-        <div class="menu" id="menuText"><a href=".\menu.html">Menu</a></div>
-        <div class="menu" id="aboutText"><a href=".\about.html">About</a></div>
+        <div class="menu" id="menuText"><a href="./menu.html">Menu</a></div>
+        <div class="menu" id="aboutText"><a href="./about.html">About</a></div>
         <div class="menu" id="aboutText1"><a href="#contact">Contact</a></div>
       </div>
       <div class="logo" id="logoContainer">
         <a href="./index.html">
-          <img class="placeholder-logo-icon" alt="" src="Placeholder Logo.svg">
+          <img class="placeholder-logo-icon" alt="Logo" src="Placeholder Logo.svg">
         </a>
       </div>
     </div>
@@ -68,7 +69,7 @@
     </div>
 
     <!-- Menu PDF Image (in normal flow) -->
-    <img class="dandelion-cafe-menupdf-page" alt="food 2" src="food 2.png">
+    <img class="dandelion-cafe-menupdf-page" alt="Menu PDF" src="food 2.png">
 
     <!-- Additional Carousels Below the PDF -->
     <div id="carousel2">
@@ -108,7 +109,7 @@
       <button class="nav-btn next" id="nextBtn5">&#10095;</button>
     </div>
 
-    <!-- Footer Section (bottom of page) -->
+    <!-- Footer Section -->
     <div class="footer" id="contact">
       <div class="footer-inner">
         <div class="frame-child"></div>
@@ -116,7 +117,7 @@
       <div class="hours-parent">
         <div class="hours">
           <div class="header003">Hours</div>
-          <img class="clock-icon" alt="" src="clock.svg">
+          <img class="clock-icon" alt="Clock" src="clock.svg">
           <div class="days">
             <p class="monday">Monday</p>
             <p class="monday">Tuesday</p>
@@ -143,7 +144,7 @@
             <p class="monday">Phone: (123) 456-7890</p>
             <p class="monday">Email: info@dandelioncafe.com</p>
           </div>
-          <img class="phone-icon" alt="" src="phone.svg">
+          <img class="phone-icon" alt="Phone" src="phone.svg">
         </div>
         <div class="follow">
           <div class="header0032">Follow Us</div>
@@ -159,14 +160,14 @@
             <p class="monday">&nbsp;</p>
             <p class="monday">Join us at Dandelion Cafe for a taste of something special!</p>
           </div>
-          <img class="vector-icon" alt="" src="Vector.svg">
+          <img class="vector-icon" alt="Vector" src="Vector.svg">
         </div>
       </div>
       <div class="header002-wrapper">
         <div class="header002">Contact Us</div>
       </div>
       <div class="vector-wrapper">
-        <img class="vector-icon1" alt="" src="Vector.svg">
+        <img class="vector-icon1" alt="Vector" src="Vector.svg">
       </div>
     </div>
   </div>
@@ -178,25 +179,22 @@
       
       // Helper: Get an image's height even if it's hidden
       function getImageHeight(img) {
-        // Save original inline styles
         var originalDisplay = img.style.display;
         var originalVisibility = img.style.visibility;
         var originalPosition = img.style.position;
-        // If computed display is none, temporarily show it for measurement
         if (window.getComputedStyle(img).display === "none") {
           img.style.display = "block";
           img.style.visibility = "hidden";
           img.style.position = "absolute";
         }
         var height = img.offsetHeight;
-        // Restore the original styles
         img.style.display = originalDisplay;
         img.style.visibility = originalVisibility;
         img.style.position = originalPosition;
         return height;
       }
       
-      // Function to adjust a carousel container's height to match its smallest image
+      // Adjust a carousel container's height to match its smallest image
       function adjustCarouselHeight(carouselId) {
         var carousel = document.getElementById(carouselId);
         var images = carousel.getElementsByTagName("img");
@@ -217,18 +215,16 @@
         adjustCarouselHeight(carouselIds[j]);
       }
       
-      // Helper function to set up a carousel
+      // Carousel setup helper
       function setupCarousel(carouselId, prevBtnId, nextBtnId) {
         var carousel = document.getElementById(carouselId);
         var images = carousel.getElementsByTagName("img");
         var currentIndex = 0;
         var totalImages = images.length;
       
-        // Gather button references for bounce animations
         var prevBtn = document.getElementById(prevBtnId);
         var nextBtn = document.getElementById(nextBtnId);
       
-        // Show the initial image
         function showImage(index) {
           for (var i = 0; i < totalImages; i++) {
             images[i].classList.remove("active");
@@ -246,10 +242,8 @@
           showImage(currentIndex);
         }
       
-        // Automatic slide every 3 seconds
         var slideInterval = setInterval(nextImage, 3000);
       
-        // Button events with bounce animations
         if (nextBtn) {
           nextBtn.addEventListener("click", function() {
             clearInterval(slideInterval);
@@ -273,7 +267,7 @@
         }
       }
       
-      // Set up all carousels
+      // Initialize carousels
       setupCarousel("carousel", "prevBtn", "nextBtn");
       setupCarousel("carousel2", "prevBtn2", "nextBtn2");
       setupCarousel("carousel3", "prevBtn3", "nextBtn3");
@@ -287,21 +281,14 @@
           window.location.href = "Menu.html";
         });
       }
-      
       var aboutText = document.getElementById("aboutText");
       if (aboutText) {
-        aboutText.addEventListener("click", function () {
-          // Add your code here if needed
-        });
+        aboutText.addEventListener("click", function () {});
       }
-      
       var logoContainer = document.getElementById("logoContainer");
       if (logoContainer) {
-        logoContainer.addEventListener("click", function () {
-          // Add your code here if needed
-        });
+        logoContainer.addEventListener("click", function () {});
       }
-      
       var header003Text = document.getElementById("header003Text");
       if (header003Text) {
         header003Text.addEventListener("click", function () {
