@@ -53,7 +53,7 @@ body {
 .enviorment1 {
     position: absolute;
     top: 914px;
-    right: 22%;
+    right: 10%;
     width: 1088px;
     height: 550px;
 }
@@ -71,7 +71,7 @@ body {
 .enviorment2 {
     position: absolute;
     top: 1513px;
-    right: 22%;
+    right: 10%;
     width: 1088px;
     height: 550px;
 }
@@ -79,7 +79,7 @@ body {
 .enviorment3 {
     position: absolute;
     top: 2711px;
-    right: 22%;
+    right: 10%;
     width: 1088px;
     height: 550px;
 }
@@ -87,7 +87,7 @@ body {
 .enviorment4 {
     position: absolute;
     top: 2112px;
-    right: 22%;
+    right: 10%;
     width: 1088px;
     height: 550px;
 }
