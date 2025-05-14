@@ -305,3 +305,85 @@ a:active {
 .instagram {
     font-family: Kameron;
 }
+
+.vector-icon {
+    position: absolute;
+    bottom: 82px;
+    left: calc(50% - 146px);
+    width: 24px;
+    height: 24px;
+}
+
+.follow {
+    width: 292px;
+    position: relative;
+    height: 109px;
+}
+
+.hours-parent {
+    position: absolute;
+    width: calc(100% - 303px);
+    top: 162px;
+    right: 162px;
+    left: 141px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 142px;
+}
+
+.header002 {
+    width: 307px;
+    position: absolute;
+    margin: 0 !important;
+    top: 10px;
+    left: calc(50% - 165px);
+    display: inline-block;
+    z-index: 0;
+}
+
+.header002-wrapper {
+    position: absolute;
+    width: calc(100% - 1130px);
+    top: 57px;
+    right: 1030px;
+    left: 100px;
+    height: 96px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    font-size: 64px;
+}
+
+.vector-icon1 {
+    width: 40px;
+    position: relative;
+    height: 40px;
+}
+
+.vector-wrapper {
+    position: absolute;
+    width: calc(100% - 1366px);
+    top: 326px;
+    right: 138px;
+    left: 1298px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.footer {
+    position: absolute;
+    width: calc(100% + 20px);
+    top: 3136px;
+    right: -20px;
+    left: 0px;
+    height: 420px;
+    color: #f6f0f0;
+}
