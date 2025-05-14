@@ -200,3 +200,108 @@ a:active {
   color: inherit;
   text-decoration: none;
 }
+
+.footer-inner {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px 0px;
+    box-sizing: border-box;
+}
+
+.header003 {
+    position: absolute;
+    bottom: 111px;
+    left: calc(50% - 112.5px);
+    font-size: 24px;
+    display: inline-block;
+    width: 257px;
+}
+
+.clock-icon {
+    position: absolute;
+    bottom: 117px;
+    left: calc(50% - 144.5px);
+    width: 20px;
+    height: 20px;
+}
+
+.monday {
+    margin: 0;
+}
+
+.days {
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 90.5px);
+    display: inline-block;
+    width: 130px;
+    height: 105px;
+}
+
+.times {
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% + 39.5px);
+    display: inline-block;
+    width: 105px;
+    height: 105px;
+}
+
+.hours {
+    width: 289px;
+    position: relative;
+    height: 139px;
+    font-size: 13px;
+}
+
+.header0031 {
+    position: absolute;
+    bottom: 59px;
+    left: calc(50% - 111px);
+    display: inline-block;
+    width: 257px;
+    cursor: pointer;
+}
+
+.adress {
+    position: absolute;
+    bottom: 0px;
+    left: calc(50% - 89px);
+    font-size: 13px;
+    display: inline-block;
+    width: 235px;
+    height: 53px;
+}
+
+.phone-icon {
+    position: absolute;
+    bottom: 58px;
+    left: calc(50% - 146px);
+    width: 24px;
+    height: 24px;
+}
+
+.contact {
+    width: 292px;
+    position: relative;
+    height: 87px;
+}
+
+.header0032 {
+    position: absolute;
+    bottom: 81px;
+    left: calc(50% - 109px);
+    display: inline-block;
+    width: 255px;
+}
+
+.instagram {
+    font-family: Kameron;
+}
