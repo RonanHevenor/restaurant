@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dandelion Cafe - Order Online</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kameron&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Dandelion Cafe Online Menu</h1>
+
+    <div id="menu">
+      <h2>Breakfast</h2>
+      <div class="menu-category">
+        <div class="menu-item" data-name="Avocado Toast" data-price="8.99">
+          <div class="info">
+            <h3>Avocado Toast</h3>
+            <span>$8.99</span>
+            <button onclick="addToCart(this)">Add to Cart</button>
+          </div>
+          <img src="https://via.placeholder.com/150" alt="Avocado Toast" />
+        </div>
+      </div>
+
+      <h2>Appetizer</h2>
+      <div class="menu-category">
+        <div class="menu-item" data-name="Spring Rolls" data-price="6.99">
+          <div class="info">
+            <h3>Spring Rolls</h3>
+            <span>$6.99</span>
+            <button onclick="addToCart(this)">Add to Cart</button>
+          </div>
+          <img src="https://via.placeholder.com/150" alt="Spring Rolls" />
+        </div>
+      </div>
+
+      <h2>Main Course</h2>
+      <div class="menu-category">
+        <div class="menu-item" data-name="Bibimbap" data-price="12.99">
+          <div class="info">
+            <h3>Bibimbap</h3>
+            <span>$12.99</span>
+            <button onclick="addToCart(this)">Add to Cart</button>
+          </div>
+          <img src="https://via.placeholder.com/150" alt="Bibimbap" />
+        </div>
+      </div>
+
+      <h2>Drinks</h2>
+      <div class="menu-category">
+        <div class="menu-item" data-name="Iced Coffee" data-price="3.99">
+          <div class="info">
+            <h3>Iced Coffee</h3>
+            <span>$3.99</span>
+            <button onclick="addToCart(this)">Add to Cart</button>
+          </div>
+          <img src="https://via.placeholder.com/150" alt="Iced Coffee" />
+        </div>
+      </div>
+
+      <h2>Desserts</h2>
+      <div class="menu-category">
+        <div class="menu-item" data-name="Matcha Cake" data-price="5.49">
+          <div class="info">
+            <h3>Matcha Cake</h3>
+            <span>$5.49</span>
+            <button onclick="addToCart(this)">Add to Cart</button>
+          </div>
+          <img src="https://via.placeholder.com/150" alt="Matcha Cake" />
+        </div>
+      </div>
+    </div>
+
+    <div id="cart">
+      <h2>Your Order</h2>
+      <ul id="cart-items"></ul>
+      <div id="total"></div>
+
+      <div class="tip-buttons">
+        <button onclick="setTip(0.10)">Add 10% Tip</button>
+        <button onclick="setTip(0.15)">Add 15% Tip</button>
+        <button onclick="setTip(0.20)">Add 20% Tip</button>
+      </div>
+
+      <p>Tip: $<span id="tip">0.00</span></p>
+
+      <p class="total">Total: $<span id="total">0.00</span></p>
+      <button onclick="submitOrder()">Submit Order</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
