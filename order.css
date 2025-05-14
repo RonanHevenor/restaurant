@@ -40,7 +40,6 @@ h2 {
   line-height: 1;
 }
 
-
 .menu-item img {
   width: 150px;
   height: 100px;
@@ -50,13 +49,17 @@ h2 {
 
 
 .menu-item button {
-  margin-top: 8px;
-  padding: 6px 10px;
-  background: #ff8c42;
+  margin: 3px;
+  padding: 4px 12px;
+  background: #fcea47;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.menu-item button:hover {
+  background: #FADA7A;
 }
 
 .cart {
@@ -113,17 +116,19 @@ h2 {
 
 .menu-item h3 {
   margin: 0 0 5px;
-  font-size: 24px;
+  margin-left: 5px;
+  font-size: 20px;
 }
 
 .menu-item span {
   display: block;
-  margin-bottom: 10px;
-  font-size: 20px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
 }
 
 .menu-item button {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .logo {
@@ -202,196 +207,196 @@ a:active {
 }
 
 .frame-child {
-    align-self: stretch;
-    position: relative;
-    /* box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.25); */
-    background-color: #292823;
-    height: 400px;
+  align-self: stretch;
+  position: relative;
+  /* box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.25); */
+  background-color: #292823;
+  height: 400px;
 }
 
 .footer-inner {
-    position: absolute;
-    width: 100%;
-    top: 0px;
-    right: 0px;
-    left: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 10px 0px;
-    box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px 0px;
+  box-sizing: border-box;
 }
 
 .header003 {
-    position: absolute;
-    bottom: 111px;
-    left: calc(50% - 112.5px);
-    font-size: 24px;
-    display: inline-block;
-    width: 257px;
+  position: absolute;
+  bottom: 111px;
+  left: calc(50% - 112.5px);
+  font-size: 24px;
+  display: inline-block;
+  width: 257px;
 }
 
 .clock-icon {
-    position: absolute;
-    bottom: 117px;
-    left: calc(50% - 144.5px);
-    width: 20px;
-    height: 20px;
+  position: absolute;
+  bottom: 117px;
+  left: calc(50% - 144.5px);
+  width: 20px;
+  height: 20px;
 }
 
 .monday {
-    margin: 0;
+  margin: 0;
 }
 
 .days {
-    position: absolute;
-    bottom: 0px;
-    left: calc(50% - 90.5px);
-    display: inline-block;
-    width: 130px;
-    height: 105px;
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% - 90.5px);
+  display: inline-block;
+  width: 130px;
+  height: 105px;
 }
 
 .times {
-    position: absolute;
-    bottom: 0px;
-    left: calc(50% + 39.5px);
-    display: inline-block;
-    width: 105px;
-    height: 105px;
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% + 39.5px);
+  display: inline-block;
+  width: 105px;
+  height: 105px;
 }
 
 .hours {
-    width: 289px;
-    position: relative;
-    height: 139px;
-    font-size: 13px;
+  width: 289px;
+  position: relative;
+  height: 139px;
+  font-size: 13px;
 }
 
 .header0031 {
-    position: absolute;
-    bottom: 59px;
-    left: calc(50% - 111px);
-    display: inline-block;
-    width: 257px;
-    cursor: pointer;
+  position: absolute;
+  bottom: 59px;
+  left: calc(50% - 111px);
+  display: inline-block;
+  width: 257px;
+  cursor: pointer;
 }
 
 .adress {
-    position: absolute;
-    bottom: 0px;
-    left: calc(50% - 89px);
-    font-size: 13px;
-    display: inline-block;
-    width: 235px;
-    height: 53px;
+  position: absolute;
+  bottom: 0px;
+  left: calc(50% - 89px);
+  font-size: 13px;
+  display: inline-block;
+  width: 235px;
+  height: 53px;
 }
 
 .phone-icon {
-    position: absolute;
-    bottom: 58px;
-    left: calc(50% - 146px);
-    width: 24px;
-    height: 24px;
+  position: absolute;
+  bottom: 58px;
+  left: calc(50% - 146px);
+  width: 24px;
+  height: 24px;
 }
 
 .contact {
-    width: 292px;
-    position: relative;
-    height: 87px;
+  width: 292px;
+  position: relative;
+  height: 87px;
 }
 
 .header0032 {
-    position: absolute;
-    bottom: 81px;
-    left: calc(50% - 109px);
-    display: inline-block;
-    width: 255px;
+  position: absolute;
+  bottom: 81px;
+  left: calc(50% - 109px);
+  display: inline-block;
+  width: 255px;
 }
 
 .instagram {
-    font-family: Kameron;
+  font-family: Kameron;
 }
 
 .vector-icon {
-    position: absolute;
-    bottom: 82px;
-    left: calc(50% - 146px);
-    width: 24px;
-    height: 24px;
+  position: absolute;
+  bottom: 82px;
+  left: calc(50% - 146px);
+  width: 24px;
+  height: 24px;
 }
 
 .follow {
-    width: 292px;
-    position: relative;
-    height: 109px;
+  width: 292px;
+  position: relative;
+  height: 109px;
 }
 
 .hours-parent {
-    position: absolute;
-    width: calc(100% - 303px);
-    top: 162px;
-    right: 162px;
-    left: 141px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 142px;
+  position: absolute;
+  width: calc(100% - 303px);
+  top: 162px;
+  right: 162px;
+  left: 141px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 142px;
 }
 
 .header002 {
-    width: 307px;
-    position: absolute;
-    margin: 0 !important;
-    top: 10px;
-    left: calc(50% - 165px);
-    display: inline-block;
-    z-index: 0;
+  width: 307px;
+  position: absolute;
+  margin: 0 !important;
+  top: 10px;
+  left: calc(50% - 165px);
+  display: inline-block;
+  z-index: 0;
 }
 
 .header002-wrapper {
-    position: absolute;
-    width: calc(100% - 1130px);
-    top: 57px;
-    right: 1030px;
-    left: 100px;
-    height: 96px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 10px 0px;
-    box-sizing: border-box;
-    font-size: 64px;
+  position: absolute;
+  width: calc(100% - 1130px);
+  top: 57px;
+  right: 1030px;
+  left: 100px;
+  height: 96px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px 0px;
+  box-sizing: border-box;
+  font-size: 64px;
 }
 
 .vector-icon1 {
-    width: 40px;
-    position: relative;
-    height: 40px;
+  width: 40px;
+  position: relative;
+  height: 40px;
 }
 
 .vector-wrapper {
-    position: absolute;
-    width: calc(100% - 1366px);
-    top: 326px;
-    right: 138px;
-    left: 1298px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    cursor: pointer;
+  position: absolute;
+  width: calc(100% - 1366px);
+  top: 326px;
+  right: 138px;
+  left: 1298px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  cursor: pointer;
 }
 
 .footer {
-    position: absolute;
-    width: calc(100% + 20px);
-    top: 3136px;
-    right: -20px;
-    left: 0px;
-    height: 420px;
-    color: #f6f0f0;
+  position: absolute;
+  width: calc(100% + 20px);
+  top: 3136px;
+  right: -20px;
+  left: 0px;
+  height: 420px;
+  color: #f6f0f0;
 }
