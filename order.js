@@ -6,7 +6,6 @@ function addToCart(button) {
   const name = itemDiv.dataset.name;
   const price = parseFloat(itemDiv.dataset.price);
 
-  // Check if item already in cart
   const existing = cart.find(i => i.name === name);
   if (existing) {
     existing.quantity += 1;
@@ -17,11 +16,26 @@ function addToCart(button) {
   updateCart();
 }
 
+function removeFromCart(name) {
+  const index = cart.findIndex(i => i.name === name);
+  if (index !== -1) {
+    cart.splice(index, 1);
+    updateCart();
+  }
+}
 
-function removeFromCart(index) {
-  cart.splice(index, 1);
+function changeQuantity(name, delta) {
+  const item = cart.find(i => i.name === name);
+  if (!item) return;
+
+  item.quantity += delta;
+  if (item.quantity <= 0) {
+    cart = cart.filter(i => i.name !== name);
+  }
+
   updateCart();
 }
+
 
 function setTip(percent) {
   tipPercent = percent;
@@ -36,14 +50,29 @@ function updateCart() {
     const li = document.createElement('li');
     li.innerHTML = `
       <span>${item.quantity} × ${item.name} - $${(item.price * item.quantity).toFixed(2)}</span>
-      <button class="remove-btn" onclick="removeFromCart('${item.name}')">Remove</button>
+      <div class="cart-controls">
+        <button onclick="changeQuantity('${item.name}', -1)">−</button>
+        <button onclick="changeQuantity('${item.name}', 1)">+</button>
+      </div>
     `;
+
     cartList.appendChild(li);
   });
 
   updateTotal();
 }
 
+function updateTotal() {
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const tax = subtotal * 0.07;
+  const tip = subtotal * tipPercent;
+  const total = subtotal + tax + tip;
+
+  document.getElementById('tip').innerText = tip.toFixed(2);
+  document.querySelectorAll('#total').forEach(el => {
+    el.innerText = total.toFixed(2);
+  });
+}
 
 function submitOrder() {
   if (cart.length === 0) {
