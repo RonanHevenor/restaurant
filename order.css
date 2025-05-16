@@ -16,6 +16,10 @@ h2 {
   text-align: center;
 }
 
+.first-h2 {
+  margin-top: 90px;
+}
+
 .menu-category {
   display: flex;
   flex-wrap: wrap;
@@ -88,7 +92,6 @@ h2 {
   font-size: 1.2em;
 }
 
-
 .menu-item .info {
   flex: 1;
 }
@@ -100,7 +103,7 @@ h2 {
 }
 
 .menu-item span {
-  display: block;
+  display: inline;
   margin-left: 5px;
   margin-bottom: 5px;
   font-size: 15px;
