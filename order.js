@@ -114,8 +114,20 @@ function submitOrder() {
   orderSummary += `\nTip: $${tip.toFixed(2)}`;
   orderSummary += `\nTotal: $${total.toFixed(2)}`;
 
+  
   alert(orderSummary);
 
+  let pickUpInfo = "Pick up your order at Dandelion Cafe\n123 Green Street, Hometown, USA";
+  
+  const now = new Date();
+  const future = new Date(now.getTime() + 25 * 60000); 
+  const hours = future.getHours().toString().padStart(2, '0');
+  const minutes = future.getMinutes().toString().padStart(2, '0');
+
+  pickUpInfo += `\n\nEstimated Pickup Time: ${hours}:${minutes}`;
+  
+  alert(pickUpInfo);
+  
   cart = [];
   tipPercent = 0;
   updateCart();
