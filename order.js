@@ -141,7 +141,7 @@ let cartCount = 0;
 
 
 function scrollToCart() {
-  const cartSection = document.getElementById("cart-items");
+  const cartSection = document.getElementById("cart");
   if (cartSection) {
     cartSection.scrollIntoView({ behavior: "smooth" });
   }
