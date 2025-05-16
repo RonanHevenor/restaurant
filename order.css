@@ -140,6 +140,7 @@ h2 {
 .menu {
   position: relative;
   cursor: pointer;
+  font-size: 90%;
 }
 
 .page-links {
