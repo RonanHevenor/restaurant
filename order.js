@@ -1,320 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
+let cart = [];
+let tipPercent = 0;
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dandelion Cafe - Order Online</title>
-  <link rel="stylesheet" href="order.css">
-  <script src="order.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Kameron&display=swap" rel="stylesheet">
-</head>
 
-<body>
-  <div class="header" data-scroll-to="headerContainer">
-    <div class="header1">
-    </div>
-    <div class="page-links">
-      <div class="menu" id="menuText"><a href=".\order.html">Order</a></div>
-      <div class="menu" id="menuText"><a href=".\menu.html">Menu</a></div>
-      <div class="menu" id="aboutText"><a href=".\about.html">About</a></div>
-      <div class="menu" id="aboutText1"><a href="#contact">Contact</a></div>
-      <div class="menu"><a href=".\reference.html">Reference</a></div>
-    </div>
-    <div class="logo" id="logoContainer"><a href="./index.html">
-        <img class="placeholder-logo-icon" alt="" src="Placeholder Logo.svg">
-      </a>
-    </div>
-  </div>
+function addToCart(button) {
+  const itemDiv = button.closest('.menu-item');
+  const name = itemDiv.dataset.name;
+  const price = parseFloat(itemDiv.dataset.price);
 
-  <div class="container">
-    <div class="header" data-scroll-to="headerContainer">
-      <div class="header1">
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
+
+  // Cart Icon Update
+  cartCount++;
+  const countEl = document.getElementById("cart-count");
+  const cartIcon = document.getElementById("cart-icon");
+
+  countEl.textContent = cartCount;
+
+  // Trigger bounce animation
+  cartIcon.classList.remove("bounce");
+  void cartIcon.offsetWidth;
+  cartIcon.classList.add("bounce");
+  
+  updateCart();
+  adjustFooterPosition();
+}
+
+
+function changeQuantity(name, delta) {
+  const item = cart.find(i => i.name === name);
+  if (!item) return;
+
+  item.quantity += delta;
+  if (item.quantity <= 0) {
+    cart = cart.filter(i => i.name !== name);
+  }
+
+  // Recalculate cart count
+  cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  // Update cart count display
+  const countEl = document.getElementById("cart-count");
+  const cartIcon = document.getElementById("cart-icon");
+
+  countEl.textContent = cartCount;
+
+  // Trigger bounce animation
+  cartIcon.classList.remove("bounce");
+  void cartIcon.offsetWidth;
+  cartIcon.classList.add("bounce");
+
+  adjustFooterPosition();
+  updateCart();
+}
+
+
+function setTip(percent) {
+  tipPercent = percent;
+  updateCart();
+}
+
+
+function updateCart() {
+  const cartList = document.getElementById('cart-items');
+  cartList.innerHTML = '';
+
+  cart.forEach(item => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span>${item.quantity} × ${item.name} - $${(item.price * item.quantity).toFixed(2)}</span>
+      <div class="cart-controls">
+        <button onclick="changeQuantity('${item.name}', -1)">−</button>
+        <button onclick="changeQuantity('${item.name}', 1)">+</button>
       </div>
-      <div class="page-links">
-        <div class="menu" id="menuText"><a href=".\order.html">Order</a></div>
-        <div class="menu" id="menuText"><a href=".\menu.html">Menu</a></div>
-        <div class="menu" id="aboutText"><a href=".\about.html">About</a></div>
-        <div class="menu" id="aboutText1"><a href="#contact">Contact</a></div>
-        <div class="menu"><a href=".\reference.html">Reference</a></div>
-      </div>
-      <div class="logo" id="logoContainer"><a href="./index.html">
-          <img class="placeholder-logo-icon" alt="" src="Placeholder Logo.svg">
-        </a>
-      </div>
-    </div>
-
-
-    <div id="menu">
-      <h2 class="first-h2">Breakfast</h2>
-      <div class="menu-category">
-        <div class="menu-item" data-name="Vegan Pancakes" data-price="5.99">
-          <div class="info">
-            <h3><span>$5.99 -</span> Vegan Pancakes</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Vegan Pancakes.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Coconut Yogurt Parfait" data-price="6.99">
-          <div class="info">
-            <h3><span>$6.99 -</span> Coconut Yogurt Parfait</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Coconut Yogurt Parfait.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Tofu Scramble & Toast" data-price="5.99">
-          <div class="info">
-            <h3><span>$5.99 -</span> Tofu Scramble & Toast</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Tofu Scramble and Toast.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Berry Chai Pudding" data-price="6.59">
-          <div class="info">
-            <h3><span>$6.59 -</span> Berry Chai Pudding</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Berry Chai Pudding.jpg" />
-        </div>
-      </div>
-
-
-
-      <h2>Appetizer</h2>
-      <div class="menu-category">
-        <div class="menu-item" data-name="Spicy Roasted Chick Peas" data-price="5.99">
-          <div class="info">
-            <h3><span>$5.99 -</span> Spicy Roasted Chick Peas</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Spicy Roasted Chick Peas.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Stuffed Grape Leaves" data-price="6.39">
-          <div class="info">
-            <h3><span>$6.39 -</span> Stuffed Grape Leaves</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Stuffed Grape Leaves.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Vegan Samosas" data-price="6.99">
-          <div class="info">
-            <h3><span>$6.99 -</span> Vegan Samosas</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Vegan Samosas.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Miso Soup" data-price="7.49">
-          <div class="info">
-            <h3><span>$7.59 -</span> Miso Soup</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Miso Soup.jpg" />
-        </div>
-      </div>
-
-
-
-      <h2>Main Course</h2>
-      <div class="menu-category">
-        <div class="menu-item" data-name="Pad Thai" data-price="13.99">
-          <div class="info">
-            <h3><span>$13.99 -</span> Pad Thai</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="https://via.placeholder.com/150" />
-        </div>
-
-
-        <div class="menu-item" data-name="Jackfruit Tacos" data-price="13.99">
-          <div class="info">
-            <h3><span>$13.99 -</span> Jackfruit Tacos</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="https://via.placeholder.com/150" />
-        </div>
-
-
-        <div class="menu-item" data-name="Lentil Curry" data-price="12.99">
-          <div class="info">
-            <h3><span>$12.99 -</span> Lentil Curry</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="https://via.placeholder.com/150" />
-        </div>
-
-
-        <div class="menu-item" data-name="Mushroom Risotto" data-price="14.49">
-          <div class="info">
-            <h3><span>$14.49 -</span> Mushroom Risotto</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="https://via.placeholder.com/150" />
-        </div>
-
-
-        <div class="menu-item" data-name="Tofu Banh Mi" data-price="14.49">
-          <div class="info">
-            <h3><span>$14.49 -</span> Tofu Banh Mi</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="https://via.placeholder.com/150" />
-        </div>
-      </div>
-
-
-
-      <h2>Drinks</h2>
-      <div class="menu-category">
-        <div class="menu-item" data-name="Coffee" data-price="2.50">
-          <div class="info">
-            <h3><span>$2.50 -</span> Coffee</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/A_small_cup_of_coffee.JPG" />
-        </div>
-
-
-        <div class="menu-item" data-name="Espresso" data-price="2.25">
-          <div class="info">
-            <h3><span>$2.25 -</span> Espresso</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Espresso.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Americano" data-price="3.00">
-          <div class="info">
-            <h3><span>$3.00 -</span> Americano</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Americano.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Latte" data-price="3.50">
-          <div class="info">
-            <h3><span>$3.50 -</span> Latte</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Latte.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Chai" data-price="3.00">
-          <div class="info">
-            <h3><span>$3.00 -</span> Chai</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Chai.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Matcha" data-price="4.00">
-          <div class="info">
-            <h3><span>$4.00 -</span> Matcha</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Matcha.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Soda" data-price="2.00">
-          <div class="info">
-            <h3><span>$2.00 -</span> Soda</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Soda.jpg" />
-        </div>
-      </div>
-
-
-
-      <h2>Desserts</h2>
-      <div class="menu-category">
-        <div class="menu-item" data-name="Chocolate Lava Cake" data-price="5.99">
-          <div class="info">
-            <h3><span>$5.99 -</span> Chocolate Lava Cake</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Chocolate Lava Cake.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Mango Sticky Rice" data-price="4.99">
-          <div class="info">
-            <h3><span>$4.99 -</span> Mango Sticky Rice</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Mango Sticky Rice.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Chocolate Churros" data-price="6.99">
-          <div class="info">
-            <h3><span>$6.99 -</span> Chocolate Churros</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Chocolate Churros.jpg" />
-        </div>
-
-
-        <div class="menu-item" data-name="Chai Pudding Parfait" data-price="6.49">
-          <div class="info">
-            <h3><span>$6.49 -</span> Chia Pudding Parfait</h3>
-            <button onclick="addToCart(this)">Add to Cart</button>
-          </div>
-          <img src="order photos/Chia Pudding Parfait.jpg" />
-        </div>
-
-      </div>
-    </div>
-
-
-
-    <!--Cart Section -->
-
-    <div>
-      <div id="cart-icon" onclick="scrollToCart()">
-        🛒
-        <span id="cart-count">0</span>
-      </div>
-    </div>
-
-
-    <div id="cart">
-      <h2>Your Order</h2>
-      <ul id="cart-items"></ul>
-      <div id="subtotal"></div>
-
-      <div class="tip-buttons">
-        <button onclick="setTip(0.10)">Add 10% Tip</button>
-        <button onclick="setTip(0.15)">Add 15% Tip</button>
-        <button onclick="setTip(0.20)">Add 20% Tip</button>
-      </div>
-
-      <p>Tip: $<span id="tip">0.00</span></p>
-
-      <p class="total">Total: $<span id="total">0.00</span></p>
-      <button onclick="submitOrder()">Submit Order</button>
-    </div>
-  </div>
-
-
-
-  <script src="script.js"></script>
-</body>
-
-</html>
+    `;
+
+    cartList.appendChild(li);
+  });
+
+  updateTotal();
+  adjustFooterPosition();
+}
+
+
+function updateTotal() {
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const tax = subtotal * 0.07;
+  const tip = subtotal * tipPercent;
+  const total = subtotal + tax + tip;
+
+  document.getElementById('tip').innerText = tip.toFixed(2);
+  document.querySelectorAll('#total').forEach(el => {
+    el.innerText = total.toFixed(2);
+  });
+}
+
+
+function submitOrder() {
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  let orderSummary = "Order submitted!\n\n";
+  cart.forEach((item, i) => {
+    orderSummary += `${i + 1}. ${item.quantity} × ${item.name} - $${(item.price * item.quantity).toFixed(2)}\n`;
+  });
+
+  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const tax = subtotal * 0.07;
+  const tip = subtotal * tipPercent;
+  const total = subtotal + tax + tip;
+
+  orderSummary += `\nSubtotal: $${subtotal.toFixed(2)}`;
+  orderSummary += `\nTax (7%): $${tax.toFixed(2)}`;
+  orderSummary += `\nTip: $${tip.toFixed(2)}`;
+  orderSummary += `\nTotal: $${total.toFixed(2)}`;
+
+  
+  alert(orderSummary);
+
+  let pickUpInfo = "Pick up your order at Dandelion Cafe\n123 Green Street, Hometown, USA";
+  
+  const now = new Date();
+  const future = new Date(now.getTime() + 25 * 60000); 
+  const hours = future.getHours().toString().padStart(2, '0');
+  const minutes = future.getMinutes().toString().padStart(2, '0');
+
+  pickUpInfo += `\n\nPickup Time: ${hours}:${minutes}`;
+  
+  alert(pickUpInfo);
+  
+  cart = [];
+  tipPercent = 0;
+  updateCart();
+}
+
+
+function adjustFooterPosition() {
+  const cartSection = document.getElementById('cart');
+  const footer = document.getElementById('footer');
+
+  if (!cartSection || !footer) return;
+
+  const cartRect = cartSection.getBoundingClientRect();
+  const spaceNeeded = window.innerHeight - cartRect.bottom;
+
+  // If the cart is expanding close to or beyond the footer
+  if (spaceNeeded < 100) {
+    const offset = 120 - spaceNeeded; // how far to nudge it down
+    footer.style.bottom = `${offset}px`;
+  } else {
+    footer.style.bottom = `0`;
+  }
+}
+
+
+
+//Cart Icon Section//
+
+let cartCount = 0;
+
+
+function scrollToCart() {
+  const cartSection = document.getElementById("cart");
+  if (cartSection) {
+    cartSection.scrollIntoView({ behavior: "smooth" });
+  }
+}
