@@ -124,7 +124,7 @@ function submitOrder() {
   const hours = future.getHours().toString().padStart(2, '0');
   const minutes = future.getMinutes().toString().padStart(2, '0');
 
-  pickUpInfo += `\n\nEstimated Pickup Time: ${hours}:${minutes}`;
+  pickUpInfo += `\n\nPickup Time: ${hours}:${minutes}`;
   
   alert(pickUpInfo);
   
